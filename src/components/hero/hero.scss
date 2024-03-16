@@ -1,0 +1,14 @@
+.hero {
+  height: calc(100vh - 100px);
+  overflow: hidden;
+  background: linear-gradient(180deg, #d9d9d9, #bbbbbb);
+  position: relative;
+
+  .imageContainer {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+  }
+}
