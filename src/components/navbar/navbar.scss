@@ -1,26 +1,66 @@
-.navbar{
-    height: 100px;
+@import "../../app.scss";
 
-    .wrapper{
-        max-width: 1366px;
-        height: 100%;
-        margin: auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+.navbar {
+  height: 100px;
 
-        span{
-            font-weight: bold;
+  .wrapper {
+    max-width: 1366px;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+
+    .social {
+      display: flex;
+      gap: 15px;
+      margin: 40px 0;
+      text-align: center;
+
+      li {
+        position: relative;
+        list-style: none;
+        height: 45px;
+        width: 45px;
+        border-radius: 50%;
+        background: #f4f2ee;
+        box-shadow: 3.5px 3.5px 8px #cfceca, -3.5px -3.5px 8px #ffffff;
+        cursor: pointer;
+
+        a.icon-link {
+          display: flex; 
+          align-items: center; 
+          justify-content: center; 
+          width: 100%; 
+          height: 100%; 
+          text-decoration: none; 
         }
-
-        .social{
-            display: flex;
-            gap: 20px;
-
-            img{
-                width: 18px;
-                height: 18px;
-            }
-        }
+      }
     }
+    
+    .btnNotActive a {
+      line-height: 47px;
+      font-size: 20px;
+      height: 7px;
+      width: 7px;
+      color: #b5b0a9;
+    }
+
+    .btnActive a {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 38px;
+      width: 38px;
+      line-height: 47px;
+      border-radius: 50%;
+      font-size: 20px;
+      box-shadow: inset 3.5px 3.5px 8px #cfceca, inset -3.5px -3.5px 8px #ffffff;
+    }
+
+    // .active {
+    //   box-shadow: inset 3.5px 3.5px 8px #cfceca, inset -3.5px -3.5px 8px #ffffff;
+    // }
+  }
 }
