@@ -6,7 +6,7 @@ const Hero = () => {
       <div className="wrapper">
         <div className="textContainer">
           <div className="text">
-            <h1>IoT </h1>
+            <h1>IoT solutions</h1>
             <h1>&</h1>
             <h1>Web development </h1>
             {/* <h1>UI design</h1> */}
