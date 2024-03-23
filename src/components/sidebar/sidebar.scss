@@ -33,25 +33,32 @@
     }
   }
 
+  @keyframes moveButton {
+    from {
+      top: 0;
+      left: 0;
+    }
+    to {
+      top: 25px;
+      left: 25px;
+    }
+  }
+
   button {
     z-index: 999;
     width: 55px;
-    height: 55px; // Adjusted to be consistent
-    border-radius: 50%; // Circular shape
+    height: 55px; 
+    border-radius: 50%; 
     position: fixed;
     top: 25px;
     left: 25px;
-    // background-color: #E0E0E0; 
     border: none;
     cursor: pointer;
-    box-shadow: 
-      5px 5px 8px #a8a7a4, 
-      -5px -5px 8px #F4F2EE; 
+    animation: moveButton 0.5s ease forwards 0.5s;    box-shadow: 5px 5px 8px #a8a7a4, -5px -5px 8px #f4f2ee;
   }
 
-  button:active {
-    box-shadow: 
-      inset 8px 8px 15px rgba(0, 0, 0, 0.2), // Pressed-in effect
-      inset -8px -8px 15px rgba(255, 255, 255, 0.7); // Pressed-in highlight
+  .btnActive {
+    background: linear-gradient(145deg, #e6e6e6, #ffffff);
+    box-shadow: 9px 9px 18px #d9d9d9, -9px -9px 18px #ffffff;
   }
 }

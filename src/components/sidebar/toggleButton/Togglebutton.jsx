@@ -1,8 +1,36 @@
-import { motion } from "framer-motion";
+import { motion, useCycle } from "framer-motion";
 
-const Togglebutton = ({ setOpen }) => {
+const variants = {
+  open: {
+    transition: {
+      type: "spring",
+      stiffness: 20,
+    },
+  },
+  closed: {
+    transition: {
+      delay: 0.5,
+      type: "spring",
+      stiffness: 400,
+      damping: 40,
+    },
+  },
+};
+const Togglebutton = ({ setOpen, open }) => {
+  const [animate, cycleAnimate] = useCycle("closed", "open");
+
+  const toggleBtn = () => {
+    setOpen((prev) => !prev);
+    cycleAnimate();
+  };
+
   return (
-    <button onClick={() => setOpen((prev) => !prev)}>
+    <motion.button
+      onClick={toggleBtn}
+      className={animate === "open" ? "btnActive" : ""}
+      whileTap={{ scale: 0.95 }}
+      variants={variants}
+    >
       <svg width="23" height="23" viewBox="0 0 23 23">
         <motion.path
           strokeWidth="3"
@@ -20,11 +48,11 @@ const Togglebutton = ({ setOpen }) => {
           d="M 2 9.423 L 20 9.423"
           variants={{
             closed: { opacity: 1 },
-            open: { opacity: 0 }, 
+            open: { opacity: 0 },
           }}
         />
         <motion.path
-          strokeWidth="3" 
+          strokeWidth="3"
           stroke="black"
           strokeLinecap="round"
           variants={{
@@ -33,7 +61,7 @@ const Togglebutton = ({ setOpen }) => {
           }}
         />
       </svg>
-    </button>
+    </motion.button>
   );
 };
 
