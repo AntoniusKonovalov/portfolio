@@ -41,7 +41,8 @@
         // background-color: red;
         h1 {
           font-size: 80px;
-          text-shadow: 4px 4px 4px rgb(88, 182, 223);
+          text-shadow: 3px 3px 0px rgba(88, 183, 223),
+            4px 4px 0px rgb(255, 0, 68);
 
           // @include mobile {
           //   font-size: 36px;
@@ -59,10 +60,9 @@
           display: flex;
           justify-content: space-between;
           width: 100%;
-          // background-color: black;
-          button {
-            padding: 20px;
 
+          .btnNotActive {
+            padding: 20px;
             background-color: transparent;
             color: rgb(0, 0, 0);
             margin-right: 20px;
@@ -71,12 +71,28 @@
             border: none;
             font-size: 20px;
             color: rgb(88, 182, 223);
-
             background: #f4f2ee;
-            text-shadow: 3px 3px 6px #cfceca, -3px -3px 6px #ffffff;
+            text-shadow: 4px 4px 6px #cacfcc, -4px -4px 6px #ffffff;
             border-radius: 8px;
-            // background: linear-gradient(145deg, #ffffff, #dcdad6);
             box-shadow: 5px 5px 11px #cfceca, -5px -5px 11px #ffffff;
+          }
+
+          .btnActive {
+            padding: 20px;
+            background-color: transparent;
+            color: rgb(0, 0, 0);
+            margin-right: 20px;
+            cursor: pointer;
+            font-weight: 1000;
+            border: none;
+            font-size: 20px;
+            color: rgb(169, 169, 169);
+            
+            background: #f4f2ee;
+            text-shadow:  2px 2px 4px #cfcace, -2px -2px 4px #ffffff;
+            border-radius: 8px;
+            background: #f4f2ee;
+            box-shadow: inset 8px 8px 17px #dfddd9, inset -8px -8px 17px #ffffff;
           }
         }
         img {
