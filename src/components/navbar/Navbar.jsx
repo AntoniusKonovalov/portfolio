@@ -17,7 +17,7 @@ const socialIcons = [
   { icon: faGithub, name: "github", url: "https://github.com/DickYtman" },
 ];
 
-function Navbar() {
+function Navbar({ activeSection }) {
   const [activeStates, setActiveStates] = useState(
     Array(socialIcons.length).fill(false)
   );
@@ -30,7 +30,7 @@ function Navbar() {
 
   return (
     <div className="navbar">
-      <Sidebar />
+      <Sidebar activeSection={activeSection}/>
       <div className="wrapper">
         <motion.span
           initial={{ opacity: 0, scale: 0.5 }}

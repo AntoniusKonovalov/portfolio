@@ -3,8 +3,9 @@
 .hero {
   height: calc(100vh - 100px);
   overflow: hidden;
-  // background: linear-gradient(180deg, #f4f2ee, #f4f2ee);
   position: relative;
+  background-color: #F4F2EE;
+
 
   .wrapper {
     max-width: 1366px;
@@ -17,7 +18,8 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 40px;
+      gap: 70px;
+
       // @include mobile {
       //   height: 50%;
       //   width: 100%;
@@ -38,7 +40,7 @@
         display: flex;
         flex-direction: column;
         justify-content: top;
-        // background-color: red;
+
         h1 {
           font-size: 80px;
           text-shadow: 3px 3px 0px rgba(88, 183, 223),
@@ -48,14 +50,18 @@
           //   font-size: 36px;
           // }
         }
+
+        h2 {
+          font-size: 30px;
+          letter-spacing: 10px;
+        }
       }
 
-      .btnImgContainer {
+      .btnContainer {
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        // background-color: red;
         .buttons {
           display: flex;
           justify-content: space-between;
@@ -65,12 +71,12 @@
             padding: 20px;
             background-color: transparent;
             color: rgb(0, 0, 0);
-            margin-right: 20px;
             cursor: pointer;
             font-weight: 1000;
             border: none;
             font-size: 20px;
-            color: rgb(88, 182, 223);
+            color: rgba(242, 48, 138, 0.646);
+
             background: #f4f2ee;
             text-shadow: 4px 4px 6px #cacfcc, -4px -4px 6px #ffffff;
             border-radius: 8px;
@@ -81,29 +87,29 @@
             padding: 20px;
             background-color: transparent;
             color: rgb(0, 0, 0);
-            margin-right: 20px;
             cursor: pointer;
             font-weight: 1000;
             border: none;
             font-size: 20px;
-            color: rgb(169, 169, 169);
-            
+            color: rgba(88, 183, 223, 0.571);
+
             background: #f4f2ee;
-            text-shadow:  -2px -2px 2px #dfddd9, 2px 2px 2px #ffffff;
+            text-shadow: -2px -2px 2px #dfddd9, 2px 2px 2px #ffffff;
             border-radius: 8px;
             background: #f4f2ee;
             box-shadow: inset 8px 8px 17px #dfddd9, inset -8px -8px 17px #ffffff;
           }
         }
-        img {
-          position: absolute;
-          width: 100%;
-          bottom: 20px;
-          // margin-right: 20px;
-          left: 50%;
-          width: 50px;
-          // background-color: blue;
-        }
+      }
+    }
+    .scrollImgCont {
+      width: 100%;
+      position: absolute;
+      left: 50%;
+      bottom: 20px;
+      img {
+        width: 50px;
+        
       }
     }
   }
@@ -125,7 +131,6 @@
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
-      // background: linear-gradient(145deg, #ffffff, #ffffff);
       box-shadow: 23px 23px 30px #a8a7a4, -23px -23px 30px #f4f2ee;
       border-radius: 10%;
     }
@@ -134,9 +139,9 @@
   .slidingTextContainer {
     position: absolute;
     font-size: 50vh;
-    bottom: -120px;
+    bottom: -80px;
     white-space: nowrap;
-    color: #ffffff09;
+    color: #dad8d44b;
     width: 50%;
     font-weight: bold;
   }

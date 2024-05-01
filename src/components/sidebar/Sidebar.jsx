@@ -1,12 +1,12 @@
 import "./sidebar.scss";
 import Links from "./links/Links";
 import Togglebutton from "./toggleButton/Togglebutton";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 const variants = {
   open: {
-    clipPath: "circle(14000px at 50px 50px)",
+    clipPath: "circle(1400px at 50px 50px)",
     transition: {
       type: "spring",
       stiffness: 20,
@@ -23,19 +23,20 @@ const variants = {
   },
 };
 
-const Sidebar = () => {
+const Sidebar = ({ activeSection }) => {
   const [open, setOpen] = useState(false);
-  useEffect(() => {
-    console.log(open);
-  }, [open]);
 
   return (
-    <motion.div className="sidebar" animate={open ? "open" : "closed"}>
+    <motion.div
+      className="sidebar"
+      animate={open ? "open" : "closed"}
+      
+    >
       <motion.div className="bg" variants={variants}>
         <Links />
       </motion.div>
       <div className="toogle-button-container">
-        <Togglebutton setOpen={setOpen} open={open} />
+        <Togglebutton setOpen={setOpen} open={open} activeSection={activeSection}/>
       </div>
     </motion.div>
   );

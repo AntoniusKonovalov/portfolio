@@ -19,6 +19,58 @@ const variants = {
   },
 };
 
+const textVariants = {
+  initial: {
+    x: -500,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const sliderVariants = {
+  initial: {
+    x: 0,
+  },
+  animate: {
+    x: "-220%",
+    transition: {
+      repeat: Infinity,
+      repeatType: "mirror",
+      duration: 20,
+    },
+  },
+};
+
+const scrollBtnVariants = {
+  initial: {
+    x: -500,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.1,
+    },
+  },
+  scrollButton: {
+    opacity: 0,
+    y: 10,
+    transition: {
+      duration: 2,
+      repeat: Infinity,
+    },
+  },
+};
+
 const buttons = [
   {
     text: "See the Latest Work",
@@ -42,33 +94,51 @@ const Hero = () => {
   return (
     <div className="hero">
       <div className="wrapper">
-        <div className="textContainer">
-          <div className="text">
-            <h1>IoT solutions</h1>
-            <h1>&</h1>
-            <h1>Web development </h1>
+        <motion.div
+          className="scrollImgCont"
+          variants={scrollBtnVariants}
+          animate="scrollButton"
+        >
+          <img src="/scroll.png" alt="" />
+        </motion.div>
+        <motion.div
+          className="textContainer"
+          variants={textVariants}
+          initial="initial"
+          animate="animate"
+        >
+          <motion.div className="text" variants={textVariants}>
+            <motion.h2 variants={textVariants}>Anton Konovalov</motion.h2>
+            <motion.h1 variants={textVariants}>IoT solutions</motion.h1>
+            <motion.h1 variants={textVariants}>&</motion.h1>
+            <motion.h1 variants={textVariants}>Web development </motion.h1>
             {/* <h1>UI design</h1> */}
-          </div>
-          <div className="btnImgContainer">
-            <div className="buttons">
-              {/* <button>See the Latest Work</button>
-              <button>Contact Me </button> */}
+          </motion.div>
+          <motion.div className="btnContainer" variants={textVariants}>
+            <motion.div className="buttons" variants={textVariants}>
               {buttons.map((item, index) => (
                 <motion.button
                   key={item.text}
                   onClick={() => toggleActive(index)}
                   className={activeBtn[index] ? "btnActive" : "btnNotActive"}
                   whileTap={{ scale: 0.95 }}
-                  variants={variants}
+                  variants={[variants, textVariants]}
                 >
                   {item.text}
                 </motion.button>
               ))}
-            </div>
-            <img src="/scroll.png" alt="" />
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
+      {/* <motion.div
+        className="slidingTextContainer"
+        variants={sliderVariants}
+        initial="initial"
+        animate="animate"
+      >
+        Your Dream with My Hands
+      </motion.div> */}
       <div className="imageContainer">
         <img src="/IoT.webp" alt="" />
       </div>

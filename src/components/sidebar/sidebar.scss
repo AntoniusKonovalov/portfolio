@@ -5,8 +5,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgb(222, 28, 28);
   color: black;
+  color: #2e231f;
+  color: #44312b;
 
   .bg {
     z-index: 999;
@@ -15,7 +16,7 @@
     left: 0;
     bottom: 0;
     width: 400px;
-    background: rgb(255, 255, 255);
+    // background: rgb(255, 255, 255);
 
     .links {
       position: absolute;
@@ -47,14 +48,15 @@
   button {
     z-index: 999;
     width: 55px;
-    height: 55px; 
-    border-radius: 50%; 
+    height: 55px;
+    border-radius: 50%;
     position: fixed;
     top: 25px;
     left: 25px;
     border: none;
     cursor: pointer;
-    animation: moveButton 0.5s ease forwards 0.5s;    box-shadow: 5px 5px 8px #a8a7a4, -5px -5px 8px #f4f2ee;
+    animation: moveButton 0.5s ease forwards 0.5s;
+    box-shadow: 5px 5px 8px #a8a4a4, -5px -5px 8px #f4f2ee;
   }
 
   .btnActive {
