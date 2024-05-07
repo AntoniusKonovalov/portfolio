@@ -5,7 +5,7 @@ const LatestProject = () => {
     <div className="latest-container">
       <div className="mainCard">
         <div className="upperBoxCard">
-          <h1>Climate Companion</h1>
+          <h1>CLIMATE COMPANION</h1>
         </div>
         <div className="subCard">
           <p>

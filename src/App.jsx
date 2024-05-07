@@ -4,6 +4,7 @@ import Hero from "./components/hero/Hero";
 import Navbar from "./components/navbar/Navbar";
 import Parallax from "./components/parallax/Parallax";
 import LatestProject from "./components/latestProject/LatestProject";
+import ContactMe from "./components/contactMe/contactMe";
 
 const App = () => {
   const [activeSection, setActiveSection] = useState("");
@@ -45,9 +46,9 @@ const App = () => {
         <LatestProject />
       </section>
 
-      <section>Portfolio</section>
-      <section id="Contact">Contact</section>
-      <section>Hero</section>
+      <section id="Contact">
+        <ContactMe />
+      </section>
     </div>
   );
 };

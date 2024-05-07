@@ -13,14 +13,15 @@
   width: 100%;
   height: 100%;
   background-image: url("/orangeBox.webp");
+  background-size: cover;
   overflow: hidden;
 
   .mainCard {
-    width: 40%;
+    width: 50%;
     height: 70%;
     position: relative;
     top: 120px;
-    left: 100px;
+    left: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -79,7 +80,7 @@
       h1 {
         font-size: 2.2rem;
         color: #d48620;
-        letter-spacing: 0.4rem;
+        letter-spacing: 0.5rem;
         position: relative;
         text-shadow: -0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.5);
       }
@@ -109,29 +110,64 @@
     }
     button {
       position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
       width: 20%;
-      height: 8%;
+      height: 10%;
       left: 30px;
       bottom: 20px;
+
       background: linear-gradient(
         var(--degree-degree),
         var(--color-start),
         var(--color-end)
       );
-      background-color: #d4862000;
-      box-shadow: -0.2rem 0.2rem 0.7rem rgba(0, 0, 0, 0.5);
-      border-radius: var(--border-radius);
-      
-      color: #fff;
-      cursor: pointer;
-      
-      z-index: 1;
-    }
 
-    button:hover {
-      background: #d48620;
-      // color: #fff;
+      box-shadow: -0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.5);
+      border-radius: 10px 10px 10px 10px;
+
+      font-size: 1rem;
+      font-weight: 600;
+      color: #d48620;
+      text-shadow: -0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.5);
       cursor: pointer;
+      border: none;
+
+      z-index: 1;
+
+      
+      transition: all 0.3s ease;
+      overflow: hidden;
+      
+      &::after {
+        content: "";
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%) translateX(20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        opacity: 0;
+      }
+      
+      &:hover {
+        transform: scaleX(1.1);
+        padding-right: 20px;
+        background: #d48620;
+        color: var(--color-text);
+        border: 2px solid #d48620;
+        text-shadow: -0.2rem 0.2rem 0.3rem #784a0d;
+        
+        cursor: pointer;
+        
+        &::after {
+          content: ">";
+          opacity: 1;
+          transform: translateY(-50%) translateX(0);
+
+        }
+      }
     }
   }
 }
