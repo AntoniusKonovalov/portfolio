@@ -1,4 +1,3 @@
-import { width } from "@fortawesome/free-brands-svg-icons/fa42Group";
 import { motion, useCycle } from "framer-motion";
 
 const variants = {
@@ -17,7 +16,9 @@ const variants = {
     },
   },
 };
-const Togglebutton = ({ setOpen, open, activeSection }) => {
+
+
+const Togglebutton = ({ setOpen, activeSection }) => {
   const [animate, cycleAnimate] = useCycle("closed", "open");
 
   const toggleBtn = () => {
@@ -28,13 +29,13 @@ const Togglebutton = ({ setOpen, open, activeSection }) => {
   const boxShadowStyles = {
     Homepage: {
       stroke: "black",
-      boxShadow: "5px 5px 8px #c2c2c2, -5px -5px 8px #f4f2ee",
+      boxShadow: "5px 5px 8px #cfceca, -5px -5px 8px #f3ede1",
       backgroundColor: "#F4F2EE",
     },
     Services: {
       stroke: "black",
-      boxShadow: "5px 5px 8px #c2c2c2, -5px -5px 8px #F8F8F9",
-      backgroundColor: "#F8F8F9",
+      boxShadow: "5px 5px 8px #d2d3d3, -5px -5px 8px #ffffff",
+      backgroundColor: "#F7F8F8",
     },
     LatestProject: {
       stroke: "white",

@@ -16,7 +16,6 @@
     left: 0;
     bottom: 0;
     width: 400px;
-    // background: rgb(255, 255, 255);
 
     .links {
       position: absolute;
@@ -51,6 +50,11 @@
     height: 55px;
     border-radius: 50%;
     position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
     top: 25px;
     left: 25px;
     border: none;
