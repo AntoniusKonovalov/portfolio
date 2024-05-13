@@ -13,7 +13,7 @@ const variants = {
     },
   },
   closed: {
-    clipPath: "circle(30px at 50px 50px)",
+    clipPath: "circle(20px at 50px 50px)",
     transition: {
       delay: 0.5,
       type: "spring",
@@ -28,37 +28,43 @@ const Sidebar = ({ activeSection }) => {
 
   const styles = {
     Homepage: {
-      backgroundColor: "#f4f2ee",
+      backdropFilter: "none",
+      background: "#f4f2ee",
+      color: "black",
       boxShadow: "10px 10px 30px #bebebe, -10px -10px 30px #ffffff",
     },
     Services: {
-      backgroundColor: "#E1E3E9",
-      // background: "linear-gradient(145deg, #fdfdfd, #c7cad6)",
+      backdropFilter: "none",
+      background: "linear-gradient(145deg, #fdfdfd, #c7cad6)",
+      color: "black",
       boxShadow: "10px 10px 30px #bebebe, -10px -10px 30px #ffffff",
     },
     LatestProject: {
-      // backgroundColor: "rgba(255, 255, 255, 0.5)",
-      background: "linear-gradient(145deg, #fdfdfd, #c7cad6)",
+      backdropFilter: "blur(.5rem)",
+      background: "linear-gradient(225deg, rgba(68, 94, 70, 0.34), rgba(19, 21, 25, 0.384))",
+      color: "white",
+      boxShadow: "none",
     },
     Contact: {
-      backgroundColor: "#F4F2FF",
+      backdropFilter: "none",
+      background: "#f4f2ee",
+      color: "black",
+      boxShadow: "10px 10px 30px #bebebe, -10px -10px 30px #ffffff",
     },
   };
 
-  const currentStyles = styles[activeSection] || {
-    stroke: "black",
-    boxShadow: "5px 5px 8px #c2c2c2, -5px -5px 8px #f4f2ee",
-    backgroundColor: "#F4F2EE",
-  };
+
+  const currentStyles = styles[activeSection] || {};
 
   return (
     <motion.div className="sidebar" animate={open ? "open" : "closed"}>
       <motion.div
         className="bg"
         style={{
-          backgroundColor: currentStyles.backgroundColor,
-          boxShadow: currentStyles.boxShadow,
+          backdropFilter: currentStyles.backdropFilter,
           background: currentStyles.background,
+          color: currentStyles.color,
+          boxShadow: currentStyles.boxShadow,
         }}
         variants={variants}
       >

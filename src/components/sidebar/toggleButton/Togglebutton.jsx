@@ -17,7 +17,6 @@ const variants = {
   },
 };
 
-
 const Togglebutton = ({ setOpen, activeSection }) => {
   const [animate, cycleAnimate] = useCycle("closed", "open");
 
@@ -26,69 +25,101 @@ const Togglebutton = ({ setOpen, activeSection }) => {
     cycleAnimate();
   };
 
-  const boxShadowStyles = {
+  const styleBtnActive = {
     Homepage: {
-      stroke: "black",
-      boxShadow: "5px 5px 8px #cfceca, -5px -5px 8px #f3ede1",
-      backgroundColor: "#F4F2EE",
+      backdropFilter: "none",
+      boxShadow: "5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff",
+      background: "linear-gradient(145deg, #dcdad6, #ffffff)",
     },
     Services: {
-      stroke: "black",
-      boxShadow: "5px 5px 8px #d2d3d3, -5px -5px 8px #ffffff",
-      backgroundColor: "#F7F8F8",
+      backdropFilter: "none",
+      boxShadow: "-5px -5px 10px #dedee0, 5px 5px 10px #ffffff",
+      background: "linear-gradient(145deg, #fdfdfd, #c7cad6)",
     },
     LatestProject: {
-      stroke: "white",
-      boxShadow: "9px 9px 17px #2e231f, -9px -9px 17px #563529",
-      backgroundColor: "rgba(255, 255, 255, 0.5)",
       backdropFilter: "blur(5px)",
-      borderTop: "1px solid rgba(255, 255, 255, 0.5)",
-      borderLeft: " 1px solid rgba(255, 255, 255, 0.5)",
+      boxShadow: "5px 5px 10px #352c22b3, -5px -5px 10px #3f3429af",
+      background: "linear-gradient(225deg, #3f3429a7, #44382c7b)",
     },
-    Contact: "20px 20px 40px #e8e7e4, -20px -20px 40px #f4f2ff",
+    Contact: {
+      backdropFilter: "none",
+      boxShadow: "5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff",
+      background: "linear-gradient(145deg, #dcdad6, #ffffff)",
+    },
   };
 
-  const currentBoxShadow =
-    boxShadowStyles[activeSection] ||
-    "5px 5px 8px #a8a7a4, -5px -5px 8px #f4f2ee";
+  const currentActiveBtn = styleBtnActive[activeSection] || {};
+
+  const buttonStyles = {
+    Homepage: {
+      backdropFilter: "none",
+      boxShadow: "5px 5px 10px #cfceca, -5px -5px 10px #f3ede1",
+      background: "linear-gradient(145deg, #ffffff, #dcdad6)",
+    },
+    Services: {
+      backdropFilter: "none",
+      boxShadow: "5px 5px 10px #d3d3d4, -5px -5px 10px #ffffff",
+      background: "linear-gradient(145deg, #ffffff, #dfdfe0)",
+    },
+    LatestProject: {
+      backdropFilter: "blur(5px)",
+      boxShadow: "5px 5px 10px #2e231f, -5px -5px 10px #563529",
+      background: "linear-gradient(225deg, #3f2a1b4d, #4b32205f)",
+    },
+    Contact: {
+      backdropFilter: "none",
+      boxShadow: "5px 5px 10px #cfceca, -5px -5px 10px #f3ede1",
+      background: "linear-gradient(145deg, #ffffff, #dcdad6)",
+    },
+  };
+
+  const currentNotActiveBtn =
+    buttonStyles[activeSection] || {};
 
   return (
     <motion.button
       onClick={toggleBtn}
-      className={animate === "open" ? "btnActive" : ""}
       whileTap={{ scale: 0.95 }}
       variants={variants}
-      style={{
-        boxShadow: currentBoxShadow.boxShadow,
-        backgroundColor: currentBoxShadow.backgroundColor,
-        backdropFilter: currentBoxShadow.backdropFilter,
-        borderTop: currentBoxShadow.borderTop,
-        borderLeft: currentBoxShadow.borderLeft,
+      animate={{
+        boxShadow:
+          animate === "open"
+            ? currentActiveBtn.boxShadow
+            : currentNotActiveBtn.boxShadow,
+        background:
+          animate === "open"
+            ? currentActiveBtn.background
+            : currentNotActiveBtn.background,
+        backdropFilter:
+          animate === "open"
+            ? currentActiveBtn.backdropFilter
+            : currentNotActiveBtn.backdropFilter,
       }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
     >
       <svg width="23" height="23" viewBox="0 0 23 23">
         <motion.path
           strokeWidth="3"
-          stroke={activeSection === "LatestProject" ? "black" : "black"}
+          stroke={activeSection === "LatestProject" ? "#9f6418" : "black"}
           strokeLinecap="round"
           variants={{
             closed: { d: "M 2 2.5 L 20 2.5" },
             open: { d: "M 3 16.5 L 17 2.5" },
           }}
-          />
+        />
         <motion.path
           strokeWidth="3"
-          stroke={activeSection === "LatestProject" ? "black" : "black"}
+          stroke={activeSection === "LatestProject" ? "#9f6418" : "black"}
           strokeLinecap="round"
           d="M 2 9.423 L 20 9.423"
           variants={{
             closed: { opacity: 1 },
             open: { opacity: 0 },
           }}
-          />
+        />
         <motion.path
           strokeWidth="3"
-          stroke={activeSection === "LatestProject" ? "black" : "black"}
+          stroke={activeSection === "LatestProject" ? "#9f6418" : "black"}
           strokeLinecap="round"
           variants={{
             closed: { d: "M 2 16.346 L 20 16.346" },

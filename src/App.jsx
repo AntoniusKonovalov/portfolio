@@ -10,10 +10,30 @@ const App = () => {
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
+    document.body.classList.remove('services-scrollbar', 'latestProject-scrollbar', 'contact-scrollbar');
+  
+    switch(activeSection) {
+      case 'Services':
+        document.body.classList.add('services-scrollbar');
+        break;
+      case 'LatestProject':
+        document.body.classList.add('latestProject-scrollbar');
+        break;
+      case 'Contact':
+        document.body.classList.add('contact-scrollbar');
+        break;
+      default:
+
+        break;
+    }
+  }, [activeSection]); 
+
+
+  useEffect(() => {
     const sections = document.querySelectorAll("section");
     const options = {
       root: null,
-      threshold: 0.1,
+      threshold: 0.5,
     };
 
     const observer = new IntersectionObserver((entries) => {
