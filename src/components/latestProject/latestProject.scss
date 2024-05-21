@@ -1,7 +1,7 @@
 :root {
-  --border-right: rgba(237, 237, 237, 0.263);
-  --border-left: rgba(237, 237, 237, 0.263);
-  --border-size: 100px;
+  --border-right: rgb(36, 46, 38);
+  --border-left: rgb(36, 46, 38);
+  --border-size: 60px;
   --border-radius: 20px;
   --color-start: rgba(68, 94, 70, 0.34);
   --color-end: rgba(19, 21, 25, 0.384);
@@ -51,13 +51,13 @@
     &::after {
       content: "";
       position: absolute;
-      bottom: 0;
+      top: 0;
       left: 0;
       width: var(--border-size);
       height: var(--border-size);
-      border-bottom: 2px solid var(--border-left);
+      border-top: 2px solid var(--border-left);
       border-left: 2px solid var(--border-left);
-      border-radius: 0 0 0 var(--border-radius);
+      border-radius: var(--border-radius) 0 0  0;
     }
 
     .upperBoxCard {
@@ -106,6 +106,7 @@
         width: 90%;
         font-size: 1.2rem;
         letter-spacing: 0.1rem;
+        line-height: 1.8rem;
       }
     }
     button {
@@ -128,7 +129,7 @@
       box-shadow: -0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.5);
       border-radius: 10px 10px 10px 10px;
 
-      font-size: 1rem;
+      font-size: 1.05rem;
       font-weight: 600;
       color: #d48620;
       text-shadow: -0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.5);

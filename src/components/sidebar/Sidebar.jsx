@@ -34,10 +34,10 @@ const Sidebar = ({ activeSection }) => {
       boxShadow: "10px 10px 30px #bebebe, -10px -10px 30px #ffffff",
     },
     Services: {
-      backdropFilter: "none",
-      background: "linear-gradient(145deg, #fdfdfd, #c7cad6)",
-      color: "black",
-      boxShadow: "10px 10px 30px #bebebe, -10px -10px 30px #ffffff",
+      backdropFilter: "blur(1.5rem)",
+      boxShadow: "8px 8px 12px #c7c8cc, -8px -8px 12px #ffffff",
+      background: "linear-gradient(145deg, #fdfdfd8f, #c7cad66f)",
+      color: "rgb(50, 50, 50)",
     },
     LatestProject: {
       backdropFilter: "blur(.5rem)",

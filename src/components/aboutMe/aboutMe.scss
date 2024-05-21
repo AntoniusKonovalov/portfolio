@@ -1,0 +1,134 @@
+
+
+.about-me-container {
+  position: absolute;
+  bottom: 5%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+
+  overflow: hidden;
+
+  .about-me-btn {
+    width: 200px;
+
+    position: relative;
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(210, 210, 210);
+    border: none;
+    padding: 6px 20px;
+    cursor: pointer;
+    border-radius: 20px 20px 0 0;
+    font-size: 16px;
+    text-align: center;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    font-weight: 700;
+    transition: 0.3s linear, color 0.3s ease;
+
+    background: #1e1e1e;
+
+    &::before,
+    &::after {
+      content: "";
+      width: 20px;
+      height: 20px;
+      bottom: 0;
+      background: transparent;
+      border: none;
+      transition: box-shadow 0.3s linear, color 0.3s ease;
+    }
+
+    &::before {
+      position: absolute;
+      left: -20px;
+      border-bottom-right-radius: 40px;
+      box-shadow: 10px 10px 0px 8px #1e1e1e;
+    }
+
+    &::after {
+      position: absolute;
+      right: -20px;
+      border-bottom-left-radius: 40px;
+      box-shadow: -10px 10px 0px 8px #1e1e1e;
+    }
+
+    &:hover {
+      background: #373737;
+      color: rgb(214, 214, 214);
+
+      &::before {
+        box-shadow: 10px 10px 0px 8px #373737;
+      }
+
+      &::after {
+        box-shadow: -10px 10px 0px 8px #373737;
+      }
+    }
+
+    &.clicked {
+      position: relative;
+      z-index: 3;
+
+      background: #ffa500;
+      color: rgb(84, 84, 84);
+
+      &::before {
+        box-shadow: 10px 10px 0px 8px #ffa500;
+      }
+
+      &::after {
+        box-shadow: -10px 10px 0px 8px #ffa500;
+      }
+    }
+
+    .arrow {
+      display: inline-block;
+      margin-left: 10px;
+      margin-top: 5px;
+      width: 10px;
+      height: 10px;
+      border-right: 3px solid currentColor;
+      border-bottom: 3px solid currentColor;
+      transform: rotate(45deg);
+      transition: transform 0.3s;
+    }
+
+    .arrow.up {
+      transform: rotate(-135deg);
+    }
+
+    .arrow.down {
+      transform: rotate(45deg);
+      margin-top: -5px;
+    }
+  }
+
+  .about-me-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 900px;
+    height: 600px;
+    border-radius: 20px 20px 20px 20px;
+    position: relative;
+    z-index: 4;
+    border: 1px solid#d1d4da;
+    background: #eef0f4;
+
+    p {
+      color: #101010;
+      width: 90%;
+      font-size: 1.2rem;
+      letter-spacing: 0.1rem;
+      line-height: 1.8rem;
+    }
+  }
+}

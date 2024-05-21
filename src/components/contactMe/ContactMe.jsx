@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import "./contactMe.scss";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const variants = {
   initial: {
@@ -19,8 +20,29 @@ const variants = {
 
 function ContactMe() {
   const ref = useRef();
+  const formRef = useRef();
+  const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const isInView = useInView(ref, { margin: "-100px" });
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("service_em59g6e", "template_u3q0rx5", formRef.current, {
+        publicKey: "n8XRF-dZNM5NGxFYv",
+      })
+      .then(
+        (result) => {
+          setSuccess(true);
+        },
+        (error) => {
+          setError(true);
+        }
+      );
+  };
+
   return (
     <motion.div
       ref={ref}
@@ -45,7 +67,7 @@ function ContactMe() {
           className="phoneSvg"
           initial={{ opacity: 1 }}
           whileInView={{ opacity: 0 }}
-          transition={{ delay: 2, duration: 1 }}
+          transition={{ delay: 1.5, duration: 0.5 }}
         >
           <svg width="460px" height="460px" viewBox="-.5 -.5 34 34">
             <motion.path
@@ -54,7 +76,7 @@ function ContactMe() {
               initial={{ opacity: 0, pathLength: 0 }}
               whileInView={{ opacity: 1 }}
               animate={isInView && { pathLength: 1 }}
-              transition={{ delay: .1, duration: 2 }}
+              transition={{ delay: 0.1, duration: 1.2 }}
               d="M28.189,16.504h-1.666c0-5.437-4.422-9.858-9.856-9.858l-0.001-1.664C23.021,4.979,28.189,10.149,28.189,16.504z
             M16.666,7.856L16.665,9.52c3.853,0,6.983,3.133,6.981,6.983l1.666-0.001C25.312,11.735,21.436,7.856,16.666,7.856z M16.333,0
             C7.326,0,0,7.326,0,16.334c0,9.006,7.326,16.332,16.333,16.332c0.557,0,1.007-0.45,1.007-1.006c0-0.559-0.45-1.01-1.007-1.01
@@ -72,14 +94,18 @@ function ContactMe() {
           </svg>
         </motion.div>
         <motion.form
+          ref={formRef}
+          onSubmit={sendEmail}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ delay: 3, duration: 1 }}
+          transition={{ delay: 2, duration: 1.2 }}
         >
-          <input type="text" required placeholder="Name" />
-          <input type="email" required placeholder="Email" />
-          <textarea rows={8} placeholder="Message" />
+          <input type="text" required placeholder="Name" name="name"/>
+          <input type="email" required placeholder="Email" name="email"/>
+          <textarea rows={8} placeholder="Message" name="message"/>
           <button type="submit">Submit</button>
+          {error && "Error"}
+          {success && "Email Sent"}
         </motion.form>
       </motion.div>
     </motion.div>

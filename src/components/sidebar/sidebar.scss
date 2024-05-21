@@ -17,6 +17,7 @@
     left: 0;
     bottom: 0;
     width: 400px;
+    
 
     .links {
       position: absolute;
@@ -27,6 +28,7 @@
       align-items: center;
       justify-content: center;
       gap: 20px;
+      cursor: pointer;
 
       a {
         font-size: 40px;

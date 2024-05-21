@@ -34,7 +34,7 @@ const Togglebutton = ({ setOpen, activeSection }) => {
     Services: {
       backdropFilter: "none",
       boxShadow: "-5px -5px 10px #dedee0, 5px 5px 10px #ffffff",
-      background: "linear-gradient(145deg, #fdfdfd, #c7cad6)",
+      background: "linear-gradient(145deg, #fdfdfd8f, #c7cad66f)",
     },
     LatestProject: {
       backdropFilter: "blur(5px)",

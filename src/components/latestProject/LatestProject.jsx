@@ -20,7 +20,7 @@ const LatestProject = () => {
             their surroundings.
           </p>
         </div>
-          <button>more details</button>
+          <button>Discover Now</button>
       </div>
     </div>
   );

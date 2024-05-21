@@ -1,10 +1,10 @@
-import "./parallax.scss";
+import "./services.scss";
 
 import { motion } from "framer-motion";
 
-const Parallax = ({ type }) => {
+const Services = ({ type }) => {
   return (
-    <div className="parallax-container">
+    <div className="services-container">
       <div className="backgroundImage">
         <img src="/circuitSchematics.webp" alt="" />
       </div>
@@ -78,4 +78,4 @@ const Parallax = ({ type }) => {
   );
 };
 
-export default Parallax;
+export default Services;
