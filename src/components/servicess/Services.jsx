@@ -1,12 +1,15 @@
+import React from "react";
+import { motion } from "framer-motion";
+import { useMediaQuery } from "usehooks-ts";
 import "./services.scss";
 
-import { motion } from "framer-motion";
-
 const Services = ({ type }) => {
+  const isMobile = useMediaQuery("(max-width: 768px)");
+
   return (
     <div className="services-container">
       <div className="backgroundImage">
-        <img src="/circuitSchematics.webp" alt="" />
+        <img src="/circuitSchematics.webp" alt="Circuit Schematics" />
       </div>
       <div className="section section-left">
         <div className="glassTextCont">
@@ -14,7 +17,7 @@ const Services = ({ type }) => {
             <h1>What I do?</h1>
             <div className="brakeLine">
               <svg
-                width="450"
+                width={isMobile ? "260" : "450"}
                 height="55"
                 viewBox="0 0 499 55"
                 fill="none"
@@ -26,7 +29,6 @@ const Services = ({ type }) => {
                 />
               </svg>
             </div>
-
             <p>
               I specialize in creating customized, automated solutions designed
               to enhance and simplify everyday processes. Whether you're looking
@@ -34,8 +36,7 @@ const Services = ({ type }) => {
               through interactive features, I've got you covered. <br />
               My expertise lies in crafting both the hardware and the intuitive
               interfaces that allow you to effortlessly monitor and manage your
-              systems. With my solutions, you can enjoy innovative, efficient,
-              and easy-to-use enhancements tailored just for you.
+              systems. 
             </p>
           </div>
         </div>
@@ -49,7 +50,7 @@ const Services = ({ type }) => {
               <p>
                 Automated hydroponics system based on analog and digital
                 sensors, or a smart system to monitor and control your home
-                using your mobile phone. The sky is the limit.
+                using your mobile phone.
               </p>
             </div>
           </div>
@@ -66,12 +67,14 @@ const Services = ({ type }) => {
             </div>
           </div>
         </div>
-        {/* <div className="lineVertical"></div> */}
       </div>
 
       <div className="section section-right">
         <div className="circuit">
-          <img src="/circuit.webp" alt="" />
+          <img
+            src={isMobile ? "/services.webp" : "/circuit.webp"}
+            alt="Circuit"
+          />
         </div>
       </div>
     </div>

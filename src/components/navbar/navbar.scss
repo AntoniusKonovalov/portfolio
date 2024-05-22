@@ -12,12 +12,16 @@
     justify-content: space-between;
     // align-items: center;
 
+    @include mobile {
+      padding: 0 20px;
+    }
+    
     .social {
       display: flex;
       gap: 15px;
       margin: 40px 0;
       text-align: center;
-
+      
       li {
         position: relative;
         list-style: none;
@@ -27,7 +31,14 @@
         background: #f4f2ee;
         box-shadow: 3.5px 3.5px 8px #cfceca, -3.5px -3.5px 8px #ffffff;
         cursor: pointer;
-
+        
+        @include mobile {
+          height: 40px;
+          width: 40px;
+          background: #f4f2ee;
+          box-shadow: 2.5px 2.5px 5px #cfceca, -2.5px -2.5px 5px #ffffff;
+        }
+        
         a.icon-link {
           display: flex; 
           align-items: center; 

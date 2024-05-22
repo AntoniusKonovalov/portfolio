@@ -112,7 +112,6 @@ const Hero = () => {
             <motion.h1 variants={textVariants}>IoT solutions</motion.h1>
             <motion.h1 variants={textVariants}>&</motion.h1>
             <motion.h1 variants={textVariants}>Web development </motion.h1>
-            {/* <h1>UI design</h1> */}
           </motion.div>
           <motion.div className="btnContainer" variants={textVariants}>
             <motion.div className="buttons" variants={textVariants}>
@@ -131,14 +130,7 @@ const Hero = () => {
           </motion.div>
         </motion.div>
       </div>
-      {/* <motion.div
-        className="slidingTextContainer"
-        variants={sliderVariants}
-        initial="initial"
-        animate="animate"
-      >
-        Your Dream with My Hands
-      </motion.div> */}
+
       <div className="imageContainer">
         <img src="/IoT.webp" alt="" />
       </div>

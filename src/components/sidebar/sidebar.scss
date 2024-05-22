@@ -5,9 +5,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: black;
-  color: #2e231f;
-  color: #44312b;
+
 
 
   .bg {
@@ -17,7 +15,10 @@
     left: 0;
     bottom: 0;
     width: 400px;
-    
+
+    @include mobile {
+      width: 200px;
+    }
 
     .links {
       position: absolute;
@@ -32,6 +33,10 @@
 
       a {
         font-size: 40px;
+        
+        @include mobile {
+          font-size: 28px;
+        }
       }
     }
   }
@@ -57,13 +62,12 @@
     justify-content: center;
     align-items: center;
 
-
     top: 25px;
     left: 25px;
     border: none;
     cursor: pointer;
     animation: moveButton 0.5s ease forwards 0.5s;
-    // box-shadow: 5px 5px 8px #a8a4a4, -5px -5px 8px #f4f2ee;
+
   }
 
   .btnActive {

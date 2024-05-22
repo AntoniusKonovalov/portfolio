@@ -14,8 +14,8 @@ const AboutMe = () => {
   return (
     <motion.div
       className="about-me-container"
-      initial={{ y: "100%" }}
-      animate={{ y: isAboutMeVisible ? 0 : "100.5%" }}
+      initial={{ y: "105%" }}
+      whileInView={{ y: isAboutMeVisible ? 0 : "100.5%"  }}
       transition={{ type: "spring", stiffness: 30 }}
     >
       <motion.button

@@ -4,13 +4,16 @@
   height: calc(100vh - 100px);
   overflow: hidden;
   position: relative;
-  background-color: #F4F2EE;
-
+  background: #f4f2ee;
 
   .wrapper {
     max-width: 1366px;
     height: 100%;
     margin: auto;
+
+    @include mobile {
+      margin: -20px;
+    }
 
     .textContainer {
       width: 50%;
@@ -20,13 +23,13 @@
       justify-content: center;
       gap: 70px;
 
-      // @include mobile {
-      //   height: 50%;
-      //   width: 100%;
-      //   gap: 20px;
-      //   align-items: center;
-      //   text-align: center;
-      // }
+      @include mobile {
+        height: 50%;
+        width: 100%;
+        gap: 40px;
+        align-items: center;
+        text-align: center;
+      }
 
       h2 {
         font-size: 30px;
@@ -46,14 +49,20 @@
           text-shadow: 3px 3px 0px rgba(88, 183, 223),
             4px 4px 0px rgb(255, 0, 68);
 
-          // @include mobile {
-          //   font-size: 36px;
-          // }
+          @include mobile {
+            font-size: 32px;
+            text-shadow: 2px 2px 0px rgba(88, 183, 223),
+              2px 2px 0px rgb(255, 0, 68);
+          }
         }
 
         h2 {
           font-size: 30px;
           letter-spacing: 10px;
+
+          @include mobile {
+            font-size: 20px;
+          }
         }
       }
 
@@ -62,10 +71,16 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+
         .buttons {
           display: flex;
           justify-content: space-between;
           width: 100%;
+
+          @include mobile {
+            display: flex;
+            width: 80%;
+          }
 
           .btnNotActive {
             padding: 20px;
@@ -76,11 +91,17 @@
             border: none;
             font-size: 20px;
             color: rgba(242, 48, 138, 0.646);
-
             background: #f4f2ee;
             text-shadow: 4px 4px 6px #cacfcc, -4px -4px 6px #ffffff;
             border-radius: 8px;
             box-shadow: 5px 5px 11px #cfceca, -5px -5px 11px #ffffff;
+
+            @include mobile {
+              border-radius: 6px;
+              padding: 15px;
+              font-size: 15px;
+              box-shadow: 3px 3px 9px #cfceca, -3px -3px 9px #ffffff;
+            }
           }
 
           .btnActive {
@@ -98,10 +119,18 @@
             border-radius: 8px;
             background: #f4f2ee;
             box-shadow: inset 8px 8px 17px #dfddd9, inset -8px -8px 17px #ffffff;
+
+            @include mobile {
+              border-radius: 6px;
+              padding: 15px;
+              font-size: 15px;
+              box-shadow: inset 3px 3px 9px #dfddd9, inset -3px -3px 9px #ffffff;
+            }
           }
         }
       }
     }
+
     .scrollImgCont {
       width: 100%;
       position: absolute;
@@ -109,30 +138,34 @@
       bottom: 20px;
       img {
         width: 50px;
-        
       }
     }
   }
 
   .imageContainer {
     height: 80%;
-    width: 50%;
     position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    bottom: 80px;
+    right: 100px;
+ 
+
+    @include mobile {
+      height: 50%;
+      right: 20%;
+      top: unset;
+      bottom: 20px;
+    }
 
     img {
-      width: auto;
-      height: auto;
-      max-width: 100%;
-      max-height: 100%;
+      width: 100%;
+      height: 100%;
       object-fit: contain;
       box-shadow: 23px 23px 30px #a8a7a4, -23px -23px 30px #f4f2ee;
       border-radius: 10%;
+
+      @include mobile {
+        box-shadow: 16px 16px 25px #a8a7a4, -16px -16px 25px #f4f2ee;
+      }
     }
   }
 
