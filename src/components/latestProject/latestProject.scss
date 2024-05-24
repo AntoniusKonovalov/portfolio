@@ -1,3 +1,5 @@
+@import "../../app.scss";
+
 :root {
   --border-right: rgb(36, 46, 38);
   --border-left: rgb(36, 46, 38);
@@ -15,6 +17,17 @@
   background-image: url("/orangeBox.webp");
   background-size: cover;
   overflow: hidden;
+
+  @include mobile {
+
+    background-position: 90% 0px;
+    background-repeat: no-repeat;
+    background-size: 280% 120%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+  }
 
   .mainCard {
     width: 50%;
@@ -36,6 +49,16 @@
 
     box-shadow: -1.3rem 1.3rem 1.3rem rgba(0, 0, 0, 0.5);
 
+    @include mobile {
+      width: 90%;
+      height: 50%;
+      top: unset;
+      left: unset;
+      border-radius: 10px;
+      gap: 15px;
+      margin-top: 100px;
+    }
+
     &::before {
       content: "";
       position: absolute;
@@ -46,6 +69,10 @@
       border-top: 2px solid var(--border-right);
       border-right: 2px solid var(--border-right);
       border-radius: 0 var(--border-radius) 0 0;
+      
+      @include mobile {
+        border-radius: 0 10px 0 0;
+      }
     }
 
     &::after {
@@ -57,7 +84,11 @@
       height: var(--border-size);
       border-top: 2px solid var(--border-left);
       border-left: 2px solid var(--border-left);
-      border-radius: var(--border-radius) 0 0  0;
+      border-radius: var(--border-radius) 0 0 0;
+
+      @include mobile {
+        border-radius: 10px 0 0 0;
+      }
     }
 
     .upperBoxCard {
@@ -76,6 +107,13 @@
       );
 
       box-shadow: -0.2rem 0.2rem 0.7rem rgba(0, 0, 0, 0.5);
+      
+      @include mobile {
+        height: 15%;
+        border-radius: 6px;
+        top: 10px;
+        box-shadow: -0.15rem 0.15rem 0.5rem rgba(0, 0, 0, 0.5);
+      }
 
       h1 {
         font-size: 2.2rem;
@@ -83,6 +121,10 @@
         letter-spacing: 0.5rem;
         position: relative;
         text-shadow: -0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.5);
+
+        @include mobile {
+          font-size: 0.8rem;
+        }
       }
     }
 
@@ -99,6 +141,12 @@
       );
       border-radius: 0 0 var(--border-radius) var(--border-radius);
 
+      @include mobile {
+        border-radius: 0 0 10px 10px;
+      }
+
+      
+
       p {
         position: relative;
         top: 15px;
@@ -107,6 +155,21 @@
         font-size: 1.2rem;
         letter-spacing: 0.1rem;
         line-height: 1.8rem;
+
+        @include mobile {
+          top: 10px;
+          font-size: 0.7rem;
+          line-height: 1.2rem;
+        }
+
+        span {
+          display: block;
+          height: 40px;
+
+          @include mobile {
+            height: 5px;
+          }
+        }
       }
     }
     button {
@@ -114,7 +177,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-
       width: 20%;
       height: 10%;
       left: 30px;
@@ -125,23 +187,29 @@
         var(--color-start),
         var(--color-end)
       );
-
       box-shadow: -0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.5);
       border-radius: 10px 10px 10px 10px;
-
       font-size: 1.05rem;
       font-weight: 600;
       color: #d48620;
       text-shadow: -0.2rem 0.2rem 0.3rem rgba(0, 0, 0, 0.5);
       cursor: pointer;
       border: none;
-
       z-index: 1;
-
-      
       transition: all 0.3s ease;
       overflow: hidden;
       
+      @include mobile {
+        left: unset;
+        right: 20px;
+        bottom: 8px;
+        font-size: .7rem;
+        width: 30%;
+        border-radius: 5px 5px 5px 5px;
+        box-shadow: -0.15rem 0.15rem 0.5rem rgba(0, 0, 0, 0.5);
+
+      }
+
       &::after {
         content: "";
         position: absolute;
@@ -151,7 +219,7 @@
         transition: opacity 0.3s ease, transform 0.3s ease;
         opacity: 0;
       }
-      
+
       &:hover {
         transform: scaleX(1.1);
         padding-right: 20px;
@@ -159,14 +227,13 @@
         color: var(--color-text);
         border: 2px solid #d48620;
         text-shadow: -0.2rem 0.2rem 0.3rem #784a0d;
-        
+
         cursor: pointer;
-        
+
         &::after {
           content: ">";
           opacity: 1;
           transform: translateY(-50%) translateX(0);
-
         }
       }
     }

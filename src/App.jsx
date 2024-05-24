@@ -68,13 +68,13 @@ const App = () => {
       <section id="Services">
         <Services type="services" />
       </section>
-      {/* <section id="LatestProject">
+      <section id="LatestProject">
         <LatestProject />
-      </section> */}
-      {/* <section id="Contact" style={{ position: 'relative' }}>
+      </section>
+      <section id="Contact" style={{ position: 'relative' }}>
         <ContactMe />
         <AboutMe />
-      </section> */}
+      </section>
     </div>
   );
 };

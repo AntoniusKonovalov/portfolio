@@ -1,3 +1,5 @@
+@import "../../app.scss";
+
 .contact {
   max-width: 1366px;
   height: 100%;
@@ -11,20 +13,40 @@
   right: 0;
   z-index: 0;
 
+  @include mobile {
+    flex-direction: column;
+    gap: 0px;
+    padding: 20px; // Add padding for better spacing on mobile
+  }
+
   .textContainer {
     flex: 1;
-
     display: flex;
     flex-direction: column;
     gap: 40px;
 
+    @include mobile {
+      gap: 15px;
+    }
+
     h1 {
       font-size: 100px;
       line-height: 88px;
+
+      @include mobile {
+        font-size: 40px; // Reduce font size for mobile
+        line-height: 44px; // Adjust line height for mobile
+        text-align: center; // Center text on mobile
+      }
     }
 
     span {
       font-weight: 300;
+
+      @include mobile {
+        font-size: 18px; 
+        text-align: center; 
+      }
     }
   }
 
@@ -33,12 +55,25 @@
     position: relative;
     display: flex;
     justify-content: center;
+    align-items: center; 
+
+    @include mobile {
+      width: 100%;
+      margin-bottom: 20px;
+    }
 
     .phoneSvg {
       stroke: #FFA500;
       position: absolute;
-      margin: auto;
+      width: 460px; 
+      height: 460px;
       z-index: -1;
+      margin: auto;
+
+      @include mobile {
+        display: flex;
+        justify-content: center;
+      }
     }
 
     form {
@@ -47,6 +82,11 @@
       gap: 20px;
       width: 100%;
 
+      @include mobile {
+        gap: 10px; 
+        width: 100%; 
+      }
+
       input,
       textarea {
         padding: 20px;
@@ -54,8 +94,13 @@
         border: 1px solid gray;
         color: gray;
         border-radius: 5px;
-
         outline: none;
+        width: 100%; // Make inputs full width
+
+        @include mobile {
+          padding: 15px; // Adjust padding for mobile
+          font-size: 14px; // Adjust font size for mobile
+        }
 
         &:focus {
           border: 1px solid orange;
@@ -69,6 +114,12 @@
         cursor: pointer;
         font-size: 1.2rem;
         font-weight: 500;
+        width: 100%; // Make button full width
+
+        @include mobile {
+          padding: 15px; // Adjust padding for mobile
+          font-size: 1rem; // Adjust font size for mobile
+        }
       }
     }
   }

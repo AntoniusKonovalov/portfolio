@@ -3,6 +3,11 @@
 .navbar {
   height: 100px;
   background-color: #F4F2EE;
+  
+  @include mobile {
+    height: 80px;
+  }
+
 
   .wrapper {
     max-width: 1366px;
@@ -10,10 +15,11 @@
     margin: auto;
     display: flex;
     justify-content: space-between;
-    // align-items: center;
+    align-items: center;
 
     @include mobile {
-      padding: 0 20px;
+      padding: 0px 20px;
+      margin-top: 5px;
     }
     
     .social {

@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import "./contactMe.scss";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { useMediaQuery } from "usehooks-ts";
 
 const variants = {
   initial: {
@@ -23,6 +24,7 @@ function ContactMe() {
   const formRef = useRef();
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   const isInView = useInView(ref, { margin: "-100px" });
 
@@ -69,7 +71,11 @@ function ContactMe() {
           whileInView={{ opacity: 0 }}
           transition={{ delay: 1.5, duration: 0.5 }}
         >
-          <svg width="460px" height="460px" viewBox="-.5 -.5 34 34">
+          <svg
+            width={isMobile ? "260" : "460"}
+            height="460px"
+            viewBox="-.5 -.5 34 34"
+          >
             <motion.path
               strokeWidth={0.4}
               fill="none"
@@ -100,9 +106,9 @@ function ContactMe() {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 2, duration: 1.2 }}
         >
-          <input type="text" required placeholder="Name" name="name"/>
-          <input type="email" required placeholder="Email" name="email"/>
-          <textarea rows={8} placeholder="Message" name="message"/>
+          <input type="text" required placeholder="Name" name="name" />
+          <input type="email" required placeholder="Email" name="email" />
+          <textarea rows={8} placeholder="Message" name="message" />
           <button type="submit">Submit</button>
           {error && "Error"}
           {success && "Email Sent"}

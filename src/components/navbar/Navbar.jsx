@@ -10,6 +10,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
 
+
 const socialIcons = [
   { icon: faFacebookF, name: "facebook", url: "https://www.facebook.com/prosto.fedia/"},
   { icon: faLinkedinIn, name: "linkedin", url: "https://www.linkedin.com/in/antoniuskonovalov/" },

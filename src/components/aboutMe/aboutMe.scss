@@ -1,4 +1,4 @@
-
+@import "../../app.scss";
 
 .about-me-container {
   position: absolute;
@@ -122,6 +122,10 @@
     z-index: 4;
     border: 1px solid#d1d4da;
     background: #eef0f4;
+    background: linear-gradient(135deg, #eef0f4, #d1d4da);
+
+    @include mobile {
+    }
 
     p {
       color: #101010;
@@ -129,6 +133,23 @@
       font-size: 1.2rem;
       letter-spacing: 0.1rem;
       line-height: 1.8rem;
+
+      @include mobile {
+        width: 350px;
+        font-size: .7rem;
+        line-height: 1.1rem;
+      }
+
+      span {
+        display: block;
+        height: 20px;
+
+        @include mobile {
+          height: 15px;
+        }
+      }
+      border-bottom: 2px solid #ffa500;
+      padding-bottom: 10px;
     }
   }
 }

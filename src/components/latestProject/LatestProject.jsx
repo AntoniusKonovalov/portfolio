@@ -13,7 +13,7 @@ const LatestProject = () => {
             for precise environmental monitoring. With a user-friendly mobile
             interface, you can view real-time data on humidity, temperature, and
             CO2 levels.
-            <span style={{ display: "block", height: "20px" }}></span> The app
+            <span></span> The app
             also allows you to access historical data through clear, comparative
             graphs, enabling easy analysis and monitoring over different
             periods. Ideal for anyone seeking a smart way to stay informed about

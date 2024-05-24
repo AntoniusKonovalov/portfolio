@@ -38,12 +38,12 @@ const AboutMe = () => {
           started as a WordPress site builder and digital marketer. I loved
           targeting audiences using social media and SEO to create impactful
           digital promotions.
-          <span style={{ display: "block", height: "20px" }}></span>
+          <span></span>
           After a few years, I shifted my focus to automation and electronics,
           working as an automation technician. I gained valuable experience
           programming controllers and wiring digital and analog sensors for
           industrial automation.
-          <span style={{ display: "block", height: "20px" }}></span>
+          <span></span>
           Today, I build applications that allow you to see real-time data from
           your sensors and view historical data through clear graphs, making it
           easy to analyze and monitor changes over time. This is perfect for
