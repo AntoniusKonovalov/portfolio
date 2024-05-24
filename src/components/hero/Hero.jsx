@@ -74,9 +74,11 @@ const scrollBtnVariants = {
 const buttons = [
   {
     text: "See the Latest Work",
+    href: "#LatestProject",
   },
   {
     text: "Contact Me",
+    href: "#Contact",
   },
 ];
 
@@ -99,7 +101,7 @@ const Hero = () => {
           variants={scrollBtnVariants}
           animate="scrollButton"
         >
-          <img src="/scroll.png" alt="" />
+          <img src="/scroll.png" alt="Scroll" />
         </motion.div>
         <motion.div
           className="textContainer"
@@ -116,15 +118,16 @@ const Hero = () => {
           <motion.div className="btnContainer" variants={textVariants}>
             <motion.div className="buttons" variants={textVariants}>
               {buttons.map((item, index) => (
-                <motion.button
-                  key={item.text}
-                  onClick={() => toggleActive(index)}
-                  className={activeBtn[index] ? "btnActive" : "btnNotActive"}
-                  whileTap={{ scale: 0.95 }}
-                  variants={[variants, textVariants]}
-                >
-                  {item.text}
-                </motion.button>
+                <a href={item.href} key={item.text} style={{ textDecoration: 'none' }}>
+                  <motion.button
+                    onClick={() => toggleActive(index)}
+                    className={activeBtn[index] ? "btnActive" : "btnNotActive"}
+                    whileTap={{ scale: 0.95 }}
+                    variants={[variants, textVariants]}
+                  >
+                    {item.text}
+                  </motion.button>
+                </a>
               ))}
             </motion.div>
           </motion.div>
@@ -132,7 +135,7 @@ const Hero = () => {
       </div>
 
       <div className="imageContainer">
-        <img src="/IoT.webp" alt="" />
+        <img src="/IoT.webp" alt="IoT" />
       </div>
     </div>
   );
