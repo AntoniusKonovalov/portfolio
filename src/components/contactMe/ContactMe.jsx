@@ -32,9 +32,12 @@ function ContactMe() {
     e.preventDefault();
 
     emailjs
-      .sendForm("service_em59g6e", "template_u3q0rx5", formRef.current, {
-        publicKey: "n8XRF-dZNM5NGxFYv",
-      })
+      .sendForm(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY // No need to wrap in an object
+      )
       .then(
         (result) => {
           setSuccess(true);
