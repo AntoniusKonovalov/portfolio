@@ -1,10 +1,16 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import "./aboutMe.scss";
+import pdfFile from "../../../public/Alla_Davydov.pdf";
+import PdfViewer from "../pdfViewer/PdfViewer";
+import { useMediaQuery } from "usehooks-ts";
+
 
 const AboutMe = () => {
   const [isAboutMeVisible, setIsAboutMeVisible] = useState(false);
   const [isButtonClicked, setIsButtonClicked] = useState(false);
+  const isMobile = useMediaQuery("(max-width: 768px)");
+
 
   const toggleAboutMe = () => {
     setIsAboutMeVisible(!isAboutMeVisible);
@@ -15,24 +21,24 @@ const AboutMe = () => {
     <motion.div
       className="about-me-container"
       initial={{ y: "105%" }}
-      whileInView={{ y: isAboutMeVisible ? 0 : "100.5%"  }}
+      whileInView={{ y: isAboutMeVisible ? 0 : isMobile ? "102%" : "100.5%" }}
       transition={{ type: "spring", stiffness: 30 }}
     >
       <motion.button
         className={`about-me-btn ${isButtonClicked ? "clicked" : ""}`}
         onClick={toggleAboutMe}
       >
-        About Me
+        My Resume
         <span className={`arrow ${isButtonClicked ? "down" : "up"}`}></span>
       </motion.button>
 
       <motion.div
         className="about-me-card"
-        // initial={{ y: "200%" }}
-        // animate={{ y: isAboutMeVisible ? 0 : "60%" }}
-        // transition={{ type: "spring", stiffness: 30 }}
       >
-        <p>
+        <div className="pdfFile">
+          <PdfViewer pdf={pdfFile} />
+        </div>
+        {/* <p>
           I'm a software developer and electronics automation technician with a
           passion for innovation and technology. My journey began in 2018 when I
           started as a WordPress site builder and digital marketer. I loved
@@ -56,7 +62,7 @@ const AboutMe = () => {
           need. Whether you're looking to automate your home or keep track of
           specific conditions, I'm here to provide a seamless and intuitive
           solution.
-        </p>
+        </p> */}
       </motion.div>
     </motion.div>
   );

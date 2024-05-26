@@ -1,5 +1,3 @@
-import React from "react";
-import { motion } from "framer-motion";
 import { useMediaQuery } from "usehooks-ts";
 import "./services.scss";
 

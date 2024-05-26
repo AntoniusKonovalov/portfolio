@@ -36,7 +36,7 @@ function ContactMe() {
         process.env.REACT_APP_EMAILJS_SERVICE_ID,
         process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
         formRef.current,
-        process.env.REACT_APP_EMAILJS_PUBLIC_KEY // No need to wrap in an object
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY 
       )
       .then(
         (result) => {

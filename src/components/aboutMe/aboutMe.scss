@@ -13,11 +13,9 @@
   overflow: hidden;
 
   .about-me-btn {
-    width: 200px;
-
+    width: 150px;
     position: relative;
     z-index: 3;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,6 +31,22 @@
     transition: 0.3s linear, color 0.3s ease;
 
     background: #1e1e1e;
+
+    &.clicked {
+      position: relative;
+      z-index: 3;
+
+      background: #ffa500;
+      color: rgb(84, 84, 84);
+
+      &::before {
+        box-shadow: 10px 10px 0px 8px #ffa500;
+      }
+
+      &::after {
+        box-shadow: -10px 10px 0px 8px #ffa500;
+      }
+    }
 
     &::before,
     &::after {
@@ -72,22 +86,6 @@
       }
     }
 
-    &.clicked {
-      position: relative;
-      z-index: 3;
-
-      background: #ffa500;
-      color: rgb(84, 84, 84);
-
-      &::before {
-        box-shadow: 10px 10px 0px 8px #ffa500;
-      }
-
-      &::after {
-        box-shadow: -10px 10px 0px 8px #ffa500;
-      }
-    }
-
     .arrow {
       display: inline-block;
       margin-left: 10px;
@@ -115,16 +113,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 900px;
+    width: 600px;
     height: 600px;
+    // width: 100%;
+    // height: 100%;
     border-radius: 20px 20px 20px 20px;
+    border: 1px solid #d1d4da;
     position: relative;
     z-index: 4;
-    border: 1px solid#d1d4da;
-    background: #eef0f4;
-    background: linear-gradient(135deg, #eef0f4, #d1d4da);
-
+    // background: #eef0f4;
+    
     @include mobile {
+      width: 80%;
+      height: 790px;
     }
 
     p {
@@ -136,7 +137,7 @@
 
       @include mobile {
         width: 350px;
-        font-size: .7rem;
+        font-size: 0.7rem;
         line-height: 1.1rem;
       }
 
@@ -150,6 +151,14 @@
       }
       border-bottom: 2px solid #ffa500;
       padding-bottom: 10px;
+    }
+
+    .pdfFile {
+      position: absolute;
+      top: 0px;
+      overflow: auto;
+      position: relative;
+
     }
   }
 }
