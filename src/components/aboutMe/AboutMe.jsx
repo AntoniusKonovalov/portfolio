@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import "./aboutMe.scss";
-import pdfFile from "../../../public/Alla_Davydov.pdf";
+import pdfFile from "../../../public/Anton-Konovalov-Web-Developer-and-SEO-specialist.pdf";
 import PdfViewer from "../pdfViewer/PdfViewer";
 import { useMediaQuery } from "usehooks-ts";
 
