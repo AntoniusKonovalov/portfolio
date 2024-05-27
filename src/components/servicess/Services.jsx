@@ -1,5 +1,6 @@
 import { useMediaQuery } from "usehooks-ts";
 import "./services.scss";
+import { useEffect } from "react";
 
 const Services = ({ type }) => {
   const isMobile = useMediaQuery("(max-width: 768px)");

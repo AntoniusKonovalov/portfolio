@@ -33,9 +33,11 @@
       @include mobile {
         height: 50%;
         width: 100%;
-        gap: 40px;
+        gap: 10px;
         align-items: center;
         text-align: center;
+        margin-bottom: 35px;
+
       }
 
       h2 {
@@ -85,8 +87,8 @@
           width: 100%;
           
           @include mobile {
-            display: flex;
             width: 100%;
+            gap: 30px;
           }
 
           .btnNotActive {
@@ -143,12 +145,15 @@
       position: absolute;
       left: 50%;
       bottom: 20px;
+
+      @include mobile {
+        width: 30px;
+        bottom: 60px;
+      }
       img {
         width: 50px;
-        
         @include mobile {
           width: 30px;
-          bottom: 10px;
         }
       }
     }
@@ -160,10 +165,9 @@
     right: 100px;
     
     @include mobile {
-      height: 50%;
-
+      height: 40%;
       right: unset;
-      top: 0;
+      top: 40px;
     }
 
     img {
