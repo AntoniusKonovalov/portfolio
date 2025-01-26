@@ -64,7 +64,7 @@ function ContactMe() {
         </motion.div>
         <motion.div className="item" variants={variants}>
           <h2>Phone</h2>
-          <span>+972-502 1010 25</span>
+          <span>+420-777 872 309</span>
         </motion.div>
       </motion.div>
       <motion.div className="formContainer">
